@@ -5,6 +5,7 @@ import Staff from '../models/staff.js';
 import Complaint from '../models/eComplaint.js';
 import nodemailer from 'nodemailer';
 import otpGenerator from 'otp-generator';
+import { s3UploadPicture } from '../config/s3Service.js';
 
 
 const transporter = nodemailer.createTransport({
@@ -47,7 +48,7 @@ export async function sendOTP(req, res) {
 // Function to submit a new complaint
 export const submitComplaint = async (req, res) => {
   try {
-   
+    
     const rollNumber = req.params.id;
     const { email,complainType, title, description, picturePath, contactNumber} = req.body;
 
@@ -65,6 +66,21 @@ export const submitComplaint = async (req, res) => {
       description,
       picturePath,
     });
+
+
+      // const params = {
+      //   Bucket: 'chaurasiyabuckets',
+      //   Key: req.file.originalname,
+      //   Body: req.file.buffer,
+      // };
+  
+      // s3.upload(params);
+      // console.log(req);
+      
+      const picture = req.file;
+      
+      await s3UploadPicture(picture);
+  
 
     await newComplaint.save();
 

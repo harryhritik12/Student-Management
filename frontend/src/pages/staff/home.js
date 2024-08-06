@@ -2,7 +2,7 @@ import { AllComplainComponent } from '../../components/staff/allComplainComponen
 import { UserDetails } from '../../components/staff/details.js';
 import { PersistentDrawerLeft } from '../../components/staff/navbar.js';
 import { Box, useMediaQuery } from "@mui/material";
-import { Typography, useTheme } from "@mui/material";
+
 
 export const StaffHome = () => {
     const isNonMobileScreens = useMediaQuery("(min-width:1000px)");

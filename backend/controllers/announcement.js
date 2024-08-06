@@ -1,24 +1,40 @@
+import { s3UploadFiles } from '../config/s3Service.js';
 import AnnouncementModel from '../models/announcement.js'; // Assuming your model file is in the same directory
 import StaffModel from '../models/staff.js';
 
 // Controller function to create a new announcement
 export async function createAnnouncement(req, res) {
     try {
+      
         
         const staffID = req.params.id;
         const staff = StaffModel.findOne({staffID});
+   
+        
         if (!staff) {
             return res.status(404).json({ message: 'Staff not found' });
         }
         const title = req.body.title;
         const description = req.body.description;
         const filePath = req.body.filePath;
+
+        console.log('hello');
+        
+
         const newAnnouncement = await AnnouncementModel.create({
             staffID,
             title,
             description,
             filePath,
         });
+
+
+        // uploading files to bucket
+        console.log('hello');
+        
+        
+        await s3UploadFiles(req.files);
+        
         res.status(201).json(newAnnouncement);
     } catch (error) {
         res.status(409).json({ message: error.message });

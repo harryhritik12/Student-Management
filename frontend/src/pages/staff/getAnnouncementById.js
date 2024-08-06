@@ -44,7 +44,7 @@ export const AnnouncementByIdStaff = () => {
                     'Content-Type': 'application/json',
                 },
             });
-    
+
             if (response.ok) {
                 navigate(`/staff/${userId}/announcement/all`);
             } else {
@@ -54,7 +54,7 @@ export const AnnouncementByIdStaff = () => {
             console.error('Error deleting announcement:', error);
         }
     };
-    
+
 
 
     if (!announcement) {
@@ -81,7 +81,12 @@ export const AnnouncementByIdStaff = () => {
                     <Grid container spacing={2}>
                         {filePath && filePath.map((file, index) => (
                             <Grid item xs={12} md={6} key={index}>
-                                <iframe title={`File ${index + 1}`} style={{ width: '100%', height: '100px', borderRadius: '0.75rem', marginBottom: '0.75rem' }} src={`http://localhost:3001/assets/${file}`} />
+                                <iframe title={`File ${index + 1}`} style={{
+                                    width: '100%',
+                                    height: '100%',
+                                    border: 'none', 
+                                    marginBottom: '0.75rem'
+                                }} src={`https://chaurasiyabuckets.s3.ap-south-1.amazonaws.com/public/assets/${file}`} />
                             </Grid>
                         ))}
                     </Grid>

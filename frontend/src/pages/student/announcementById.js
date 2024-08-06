@@ -72,7 +72,7 @@ export const AnnouncementById = () => {
                                 <iframe
                                     title={`File ${index + 1}`}
                                     style={{ width: '100%', height: '100px', borderRadius: '0.75rem', marginBottom: '0.75rem' }}
-                                    src={`http://localhost:3001/assets/${file}`}
+                                    src={`https://chaurasiyabuckets.s3.ap-south-1.amazonaws.com/public/assets/${file}`}
                                 />
                             </Grid>
                         ))}

@@ -112,7 +112,7 @@ export const ComplaintById = () => {
                     height="auto"
                     alt="post"
                     style={{ mb:"2rem", borderRadius: "0.75rem", marginTop: "0.75rem" }}
-                    src={`http://localhost:3001/assets/${complain.picturePath}`}
+                    src={`https://chaurasiyabuckets.s3.ap-south-1.amazonaws.com/public/assets/${complain.picturePath}`}
                   />
                 )}
               </>

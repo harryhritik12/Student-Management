@@ -45,16 +45,26 @@ const __dirname = path.dirname(__filemame);
 app.use("/assets", express.static(path.join(__dirname, 'public/assets')));
 /* FILE STORAGE */
 
-const storage = multer.diskStorage({
-    destination: function (req, file, cb) {
-        cb(null, 'public/assets');
+// const storage = multer.diskStorage({
+//     destination: function (req, file, cb) {
+//         cb(null, 'public/assets');
+//     },
+//     filename: function (req, file, cb) {
+//         cb(null, file.originalname);
+//     }
+// });
+
+const upload = multer({
+    storage: multer.memoryStorage(),
+    limits: {
+      fileSize: 5 * 1024 * 1024, // limit file size to 5MB
+      files: 5
     },
-    filename: function (req, file, cb) {
-        cb(null, file.originalname);
-    }
-});
-const upload = multer({ storage ,
-    limits: { fileSize: 1024 * 1024 * 5 },});
+  });
+
+
+// const upload = multer({ storage ,
+//     limits: { fileSize: 1024 * 1024 * 5 },});
 
 app.post('/student/:id/eComplaint/submit', verifyToken, upload.single('picture'), submitComplaint);
 app.post('/staff/:id/announcement/create', verifyToken, upload.array('file',5),createAnnouncement);
