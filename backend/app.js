@@ -13,11 +13,6 @@ import multer from "multer";
 import path from "path";
 import { verifyToken } from "./middleware/auth.js";
 import { createAnnouncement } from "./controllers/announcement.js";
-import TimeTable from './models/timetable.js';
-import AdditionalCourseModel from "./models/additionalCourse.js";
-import { timetables ,additionalCourseData,announcementData, faculties} from "./data/index.js";
-import AnnouncementModel from "./models/announcement.js";
-import FacultyModel from "./models/faculty.js";
 
 const app = express();
 dotenv.config();
@@ -28,14 +23,11 @@ app.use(cors());
 const uri = process.env.MONGODB_ATLAS_URL;
 mongoose.connect(uri)
     .then(() => { 
-        app.listen(3001, () => {
+        app.listen(process.env.PORT, () => {
             console.log("listening at port 3001");
         })
         console.log('db successful');
-        // TimeTable.insertMany(timetables);
-        //  AdditionalCourseModel.insertMany(additionalCourseData);
-        // AnnouncementModel.insertMany(announcementData);
-        // FacultyModel.insertMany(faculties);
+
                 })
     .catch((error) => { console.log(error) })
 
