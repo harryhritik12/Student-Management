@@ -18,7 +18,10 @@ const app = express();
 dotenv.config();
 app.use(express.json());
 
-app.use(cors({origin: process.env.APP_BASE_URL}));
+app.use(cors({
+  origin: [process.env.APP_BASE_URL],
+  methods: ['GET', 'POST'],
+}));
 
 const uri = process.env.MONGODB_ATLAS_URL;
 mongoose.connect(uri)
