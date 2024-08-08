@@ -3,17 +3,17 @@ import bcrypt from "bcrypt";
 import StudentModel from "../models/student.js";
 import FacultyModel from "../models/faculty.js";
 import StaffModel from "../models/staff.js";
-import nodemailer from 'nodemailer'; // Import for email sending
-import otpGenerator from 'otp-generator'; // Import for OTP generation
+import nodemailer from 'nodemailer'; 
+import otpGenerator from 'otp-generator'; 
 
 const router = express.Router();
 
 const transporter = nodemailer.createTransport({
-    // Configure your email transport options here
-    service: 'Gmail', // Use the appropriate email service provider
+   
+    service: 'Gmail', 
     auth: {
         user: 'guptaminshu85@gmail.com', // Your email address
-        pass: 'tktn sbod atvl sbbs' // Your email password or app-specific password
+        pass: process.env.NODEMAILER_PASSWORD // Your email password or app-specific password
     }
 });
 
@@ -85,6 +85,7 @@ router.post('/faculty', async (req, res) => {
             req.body.password = hashedPassword;
 
             const otp = await sendOTP(req.body.email); // Generate and send OTP
+            
             // Store the OTP in the user object temporarily for authentication
             const faculty = new FacultyModel(req.body);
             faculty.otp = { code: otp, createdAt: new Date() };
