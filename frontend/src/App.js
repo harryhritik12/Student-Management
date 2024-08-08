@@ -33,7 +33,7 @@ import { GetAllTimetable } from './pages/staff/allTimetable.js';
 import { GetTimetableById } from './pages/staff/getTimetableById.js';
 import { ComplaintByIdStaff } from './pages/staff/getComplainById.js';
 import { AnnouncementByIdStaff } from './pages/staff/getAnnouncementById.js';
-import CustomLayout from './components/CustomLayout.js';
+// import CustomLayout from './components/CustomLayout.js';
 
 
 function App() {
@@ -46,7 +46,7 @@ function App() {
         <ThemeProvider theme={theme}>
           <CssBaseline />
           <Router>
-            <CustomLayout>
+            {/* <CustomLayout> */}
           <Routes>
               <Route path="/" element={<Home />} />
               <Route path="/auth/login" element={< Login value={value} />} />
@@ -75,7 +75,7 @@ function App() {
               <Route path='/staff/:id/eComplaint/:complaintID' element={isAuth ? <ComplaintByIdStaff /> : <Navigate to="/" />} />
               <Route path='/staff/:id/announcement/:announcementId' element={isAuth ? <AnnouncementByIdStaff /> : <Navigate to="/" />} />
             </Routes>
-            </CustomLayout>
+            {/* </CustomLayout> */}
           </Router>
 
         </ThemeProvider>

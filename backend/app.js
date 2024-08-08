@@ -25,7 +25,8 @@ app.use(express.json());
 
 app.use(cors());
 
-mongoose.connect("mongodb://localhost:27017/CollegeManagement")
+const uri = process.env.MONGODB_ATLAS_URL;
+mongoose.connect(uri)
     .then(() => { 
         app.listen(3001, () => {
             console.log("listening at port 3001");
@@ -36,23 +37,13 @@ mongoose.connect("mongodb://localhost:27017/CollegeManagement")
         // AnnouncementModel.insertMany(announcementData);
         // FacultyModel.insertMany(faculties);
                 })
-    .catch((error) => { console.log('db connection failed') })
+    .catch((error) => { console.log(error) })
 
 
 const __filemame = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filemame);
 
 app.use("/assets", express.static(path.join(__dirname, 'public/assets')));
-/* FILE STORAGE */
-
-// const storage = multer.diskStorage({
-//     destination: function (req, file, cb) {
-//         cb(null, 'public/assets');
-//     },
-//     filename: function (req, file, cb) {
-//         cb(null, file.originalname);
-//     }
-// });
 
 const upload = multer({
     storage: multer.memoryStorage(),
@@ -62,9 +53,6 @@ const upload = multer({
     },
   });
 
-
-// const upload = multer({ storage ,
-//     limits: { fileSize: 1024 * 1024 * 5 },});
 
 app.post('/student/:id/eComplaint/submit', verifyToken, upload.single('picture'), submitComplaint);
 app.post('/staff/:id/announcement/create', verifyToken, upload.array('file',5),createAnnouncement);

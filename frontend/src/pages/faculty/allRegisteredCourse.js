@@ -47,7 +47,7 @@ export const AllRegisteredCourse = () => {
   useEffect(() => {
     const fetchCourses = async () => {
       try {
-        const response = await axios.get(`http://localhost:3001/faculty/${userId}/additionalCourse/all`, {
+        const response = await axios.get(`${process.env.NODE_BACKEND_APP_BASE_URL}/faculty/${userId}/additionalCourse/all`, {
           method: 'GET',
           headers: {
             Authorization: `Bearer ${token}`,

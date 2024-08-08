@@ -24,7 +24,7 @@ export const AllComplainComponent = () => {
     useEffect(() => {
         const fetchComplaints = async () => {
             try {
-                const response = await fetch(`http://localhost:3001/staff/${userId}/eComplaint/all`, {
+                const response = await fetch(`${process.env.NODE_BACKEND_APP_BASE_URL}/staff/${userId}/eComplaint/all`, {
                     method: 'GET',
                     headers: {
                         Authorization: `Bearer ${token}`,

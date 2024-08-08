@@ -24,7 +24,7 @@ export const Timetable = () => {
         let semester = data.get('semester');
 
         try {
-            const response = await fetch(`http://localhost:3001/student/${userId}/timetable`, {
+            const response = await fetch(`${process.env.NODE_BACKEND_APP_BASE_URL}/student/${userId}/timetable`, {
                 method: 'POST',
                 headers: {
                     Authorization: `Bearer ${token}`,

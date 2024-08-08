@@ -1,35 +1,5 @@
 import React from 'react';
-// import AppBar from '@mui/material/AppBar';
-// import Box from '@mui/material/Box';
-// import Typography from '@mui/material/Typography';
-// import Toolbar from '@mui/material/Toolbar';
-// import Button from '@mui/material/Button';
-// import Container from '@mui/material/Container';
-// import Grid from '@mui/material/Grid';
-// import { createTheme, ThemeProvider } from '@mui/material/styles';
-// import CssBaseline from '@mui/material/CssBaseline';
 import { Navbar } from '../components/navbar';
-
-// const defaultTheme = createTheme();
-
-// export const Home = () => {
-//   return (
-//     <div>
-//   
-//       <ThemeProvider theme={defaultTheme}>
-//         <CssBaseline />
-//         <Container>
-//           <h1>HOME PAGE</h1>
-//         </Container>
-//       </ThemeProvider>
-//     </div>
-
-//   );
-// };
-
-
-// ParallaxBanner.jsx
-
 import { useState, useEffect } from "react"; import "../components/ui.css";
 import { useNavigate } from 'react-router-dom';
 
@@ -52,7 +22,7 @@ export const Home = () => {
       <Navbar />
       <section
         style={{
-          backgroundSize: `${(window.outerHeight - scrollPosition) / 3}%`,
+          backgroundSize: `${(window.outerHeight - scrollPosition) / 7}%`,
         }}
         className="bannerr containerr"
       >

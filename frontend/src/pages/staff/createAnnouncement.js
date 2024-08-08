@@ -37,7 +37,7 @@ export const CreateAnnouncement = () => {
 
       try {
         const response = await fetch(
-          `http://localhost:3001/staff/${userId}/announcement/create`,
+          `${process.env.NODE_BACKEND_APP_BASE_URL}/staff/${userId}/announcement/create`,
           {
             method: "POST",
             headers: {

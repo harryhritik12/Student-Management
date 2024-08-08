@@ -15,7 +15,7 @@ export const AnnouncementById = () => {
     useEffect(() => {
         const fetchAnnouncement = async () => {
             try {
-                const response = await axios.get(`http://localhost:3001/student/${userId}/announcement/${announcementId}`, {
+                const response = await axios.get(`${process.env.NODE_BACKEND_APP_BASE_URL}/student/${userId}/announcement/${announcementId}`, {
                     method: 'POST',
                     headers: {
                         Authorization: `Bearer ${token}`,

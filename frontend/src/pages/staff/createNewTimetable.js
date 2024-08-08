@@ -61,7 +61,7 @@ export const CreateNewTimetable = () => {
 
     const handleSubmit = async (e) => {
         e.preventDefault();
-        const url = `http://localhost:3001/staff/${userId}/timetable/create`;
+        const url = `${process.env.NODE_BACKEND_APP_BASE_URL}/staff/${userId}/timetable/create`;
 
         try {
             const response = await fetch(url, {

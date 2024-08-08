@@ -19,7 +19,7 @@ export const AnnouncementByIdStaff = () => {
     useEffect(() => {
         const fetchAnnouncement = async () => {
             try {
-                const response = await axios.get(`http://localhost:3001/staff/${userId}/announcement/${announcementId}`, {
+                const response = await axios.get(`${process.env.NODE_BACKEND_APP_BASE_URL}/staff/${userId}/announcement/${announcementId}`, {
                     headers: {
                         Authorization: `Bearer ${token}`,
                         'Content-Type': 'application/json',
@@ -37,7 +37,7 @@ export const AnnouncementByIdStaff = () => {
 
     const handleDelete = async () => {
         try {
-            const response = await fetch(`http://localhost:3001/staff/${userId}/announcement/delete/${announcementId}`, {
+            const response = await fetch(`${process.env.NODE_BACKEND_APP_BASE_URL}/staff/${userId}/announcement/delete/${announcementId}`, {
                 method: 'PATCH',
                 headers: {
                     'Authorization': `Bearer ${token}`,
