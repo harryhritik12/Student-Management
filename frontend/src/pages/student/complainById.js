@@ -27,7 +27,7 @@ export const ComplaintById = () => {
   useEffect(() => {
     const fetchComplain = async () => {
       try {
-        const response = await axios.get(`${process.env.NODE_BACKEND_APP_BASE_URL}/student/${id}/eComplaint/${complaintID}`, {
+        const response = await axios.get(`${process.env.REACT_APP_BACKEND_URL}/student/${id}/eComplaint/${complaintID}`, {
           method: 'GET',
           headers: {
             Authorization: `Bearer ${token}`,

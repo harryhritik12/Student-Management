@@ -43,7 +43,7 @@ export function Login(props) {
 
 
     try {
-      const response = await fetch(`${process.env.NODE_BACKEND_APP_BASE_URL}/auth/login`, {
+      const response = await fetch(`${process.env.REACT_APP_BACKEND_URL}/auth/login`, {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',

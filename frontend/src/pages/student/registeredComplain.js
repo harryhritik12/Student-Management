@@ -32,7 +32,7 @@ export const RegisteredComplainPage = () => {
   useEffect(() => {
     const fetchComplaints = async () => {
       try {
-        const response = await fetch(`${process.env.NODE_BACKEND_APP_BASE_URL}/student/${userId}/eComplaint/all`, {
+        const response = await fetch(`${process.env.REACT_APP_BACKEND_URL}/student/${userId}/eComplaint/all`, {
           method: 'GET',
           headers: {
             Authorization: `Bearer ${token}`,

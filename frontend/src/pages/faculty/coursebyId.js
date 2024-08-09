@@ -25,7 +25,7 @@ export const CourseById = () => {
     const handleOnClickDelete = async (courseId) => {
 
         try {
-            const response = await fetch(`${process.env.NODE_BACKEND_APP_BASE_URL}/faculty/${userId}/additionalCourse/delete/${courseId}`, {
+            const response = await fetch(`${process.env.REACT_APP_BACKEND_URL}/faculty/${userId}/additionalCourse/delete/${courseId}`, {
                 method: 'PATCH',
                 headers: {
                     Authorization: `Bearer ${token}`,
@@ -52,7 +52,7 @@ export const CourseById = () => {
     useEffect(() => {
         const fetchCourse = async () => {
             try {
-                const response = await fetch(`${process.env.NODE_BACKEND_APP_BASE_URL}/faculty/${courseId}/additionalCourse/${courseId}`, {
+                const response = await fetch(`${process.env.REACT_APP_BACKEND_URL}/faculty/${courseId}/additionalCourse/${courseId}`, {
                     method: 'GET',
                     headers: {
                         Authorization: `Bearer ${token}`,

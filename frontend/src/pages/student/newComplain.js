@@ -50,7 +50,7 @@ export const NewComplainPage = () => {
             formData.append("picturePath", values.picturePath);
 
     
-            const response = await fetch(`${process.env.NODE_BACKEND_APP_BASE_URL}/student/${userId}/eComplaint/submit`, {
+            const response = await fetch(`${process.env.REACT_APP_BACKEND_URL}/student/${userId}/eComplaint/submit`, {
                 method: 'POST',
                 headers: {
                     Authorization: `Bearer ${token}`,

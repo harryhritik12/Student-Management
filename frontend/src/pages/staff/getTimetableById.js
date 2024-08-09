@@ -18,7 +18,7 @@ export const GetTimetableById = () => {
     useEffect(() => {
         const fetchTimetableData = async () => {
             try {
-                const response = await fetch(`${process.env.NODE_BACKEND_APP_BASE_URL}/staff/${userId}/timetable/${timetableID}`, {
+                const response = await fetch(`${process.env.REACT_APP_BACKEND_URL}/staff/${userId}/timetable/${timetableID}`, {
                     method: 'GET',
                     headers: {
                         Authorization: `Bearer ${token}`,
@@ -42,7 +42,7 @@ export const GetTimetableById = () => {
 
     const handleDelete = async () => {
         try {
-            const response = await fetch(`${process.env.NODE_BACKEND_APP_BASE_URL}/staff/${userId}/timetable/delete/${timetableID}`, {
+            const response = await fetch(`${process.env.REACT_APP_BACKEND_URL}/staff/${userId}/timetable/delete/${timetableID}`, {
                 method: 'PATCH',
                 headers: {
                     Authorization: `Bearer ${token}`,

@@ -54,7 +54,7 @@ export const AddCourses = () => {
                 timing: values.timing,
                 day: values.day
             };
-            const response = await fetch(`${process.env.NODE_BACKEND_APP_BASE_URL}/faculty/${userId}/additionalCourse/add`, {
+            const response = await fetch(`${process.env.REACT_APP_BACKEND_URL}/faculty/${userId}/additionalCourse/add`, {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',

@@ -47,7 +47,7 @@ export function FacultySignup(props) {
       let department = data.get('department');
       let yearOfJoining = data.get('yearOfJoining');
 
-      await axios.post(`${process.env.NODE_BACKEND_APP_BASE_URL}/signup/faculty`, { firstName, lastName, email, password, facultyID, department, yearOfJoining })
+      await axios.post(`${process.env.REACT_APP_BACKEND_URL}/signup/faculty`, { firstName, lastName, email, password, facultyID, department, yearOfJoining })
         .then(result => {
           if (result.data.status === 500) alert(result.data.error);
           else if (result.data.status === 400 && result.data === "You have already Registered") { alert("You have already Registered!"); navigate('/auth/login'); }
@@ -57,7 +57,7 @@ export function FacultySignup(props) {
         }).catch(err => console.log(err));
     } else {
       let otp = data.get('otp');
-      await axios.post(`${process.env.NODE_BACKEND_APP_BASE_URL}/signup/authenticate`, { otp })
+      await axios.post(`${process.env.REACT_APP_BACKEND_URL}/signup/authenticate`, { otp })
         .then(result => {
           console.log(result);
          

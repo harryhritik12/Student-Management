@@ -13,9 +13,10 @@ const transporter = nodemailer.createTransport({
     service: 'Gmail', 
     auth: {
         user: 'guptaminshu85@gmail.com', // Your email address
-        pass: process.env.NODEMAILER_PASSWORD // Your email password or app-specific password
+        pass: 'cccf jlfz ekag vagu'// Your email password or app-specific password
     }
 });
+
 
 // Function to generate and send OTP
 async function sendOTP(email) {
@@ -146,9 +147,8 @@ const authenticateUser = async (_otp) => {
         const student = await StudentModel.findOne({ 'otp.code': _otp });
         
         if(student){
-            // console.log(student.otp);
+        
             if (!student.otp || student.otp.code !== _otp || new Date() - student.otp.createdAt > 5 * 60 * 1000) {
-                console.log("delete the student");
                 await student.deleteOne();
                 throw new Error('Invalid or expired OTP');
             }
@@ -159,7 +159,7 @@ const authenticateUser = async (_otp) => {
 
         const faculty = await FacultyModel.findOne({ 'otp.code': _otp });
         if(faculty){
-            // console.log(faculty.otp);
+         
             if (!faculty.otp || faculty.otp.code !== _otp || new Date() - faculty.otp.createdAt > 5 * 60 * 1000) {
                 await faculty.deleteOne();
                 throw new Error('Invalid or expired OTP');
@@ -171,7 +171,7 @@ const authenticateUser = async (_otp) => {
 
         const staff = await StaffModel.findOne({ 'otp.code': _otp });
         if(staff){
-            // console.log(staff.otp);
+           
             if (!staff.otp || staff.otp.code !== _otp || new Date() - staff.otp.createdAt > 5 * 60 * 1000) {
                 await staff.deleteOne();
                 throw new Error('Invalid or expired OTP');

@@ -35,7 +35,7 @@ export const ComplaintByIdStaff = () => {
 
   const handleUpdate = async () => {
     try {
-      const response = await fetch(`${process.env.NODE_BACKEND_APP_BASE_URL}/staff/${id}/eComplaint/${complaintID}/update`, {
+      const response = await fetch(`${process.env.REACT_APP_BACKEND_URL}/staff/${id}/eComplaint/${complaintID}/update`, {
         method: 'PATCH',
         headers: {
           Authorization: `Bearer ${token}`,
@@ -52,7 +52,7 @@ export const ComplaintByIdStaff = () => {
   };
   const handleOtp = async () => {
     try {
-      const response = await fetch(`${process.env.NODE_BACKEND_APP_BASE_URL}/staff/${id}/eComplaint/${complaintID}/otp`, {
+      const response = await fetch(`${process.env.REACT_APP_BACKEND_URL}/staff/${id}/eComplaint/${complaintID}/otp`, {
         method: 'POST',
         headers: {
           Authorization: `Bearer ${token}`,
@@ -68,7 +68,7 @@ export const ComplaintByIdStaff = () => {
   };
   const handleVerifyOtp = async () => {
     try {
-      const response = await fetch(`${process.env.NODE_BACKEND_APP_BASE_URL}/staff/${id}/eComplaint/${complaintID}/update`, {
+      const response = await fetch(`${process.env.REACT_APP_BACKEND_URL}/staff/${id}/eComplaint/${complaintID}/update`, {
         method: 'PATCH',
         headers: {
           'Content-Type': 'application/json',
@@ -89,7 +89,7 @@ export const ComplaintByIdStaff = () => {
   useEffect(() => {
     const fetchComplain = async () => {
       try {
-        const response = await axios.get(`${process.env.NODE_BACKEND_APP_BASE_URL}/staff/${id}/eComplaint/${complaintID}`, {
+        const response = await axios.get(`${process.env.REACT_APP_BACKEND_URL}/staff/${id}/eComplaint/${complaintID}`, {
           method: 'GET',
           headers: {
             Authorization: `Bearer ${token}`,

@@ -19,7 +19,7 @@ export const GetAllTimetable = () => {
     useEffect(() => {
         const fetchTimetables = async () => {
             try {
-                const response = await fetch(`${process.env.NODE_BACKEND_APP_BASE_URL}/staff/${userId}/timetable/all`, {
+                const response = await fetch(`${process.env.REACT_APP_BACKEND_URL}/staff/${userId}/timetable/all`, {
                     method: 'GET',
                     headers: {
                         Authorization: `Bearer ${token}`,
