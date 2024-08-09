@@ -18,9 +18,12 @@ const app = express();
 dotenv.config();
 app.use(express.json());
 
+
 app.use(cors({
-  origin: [process.env.FRONTEND_URL],
-  methods: ['GET', 'POST'],
+  origin: process.env.FRONTEND_URL, 
+  methods: ['GET', 'POST', 'PUT', 'DELETE', 'OPTIONS'], 
+  allowedHeaders: ['Content-Type', 'Authorization'],
+  credentials: true, 
 }));
 
 const uri = process.env.MONGODB_ATLAS_URL;
