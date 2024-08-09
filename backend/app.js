@@ -26,6 +26,9 @@ app.use(cors({
   credentials: true, 
 }));
 
+
+app.options('*', cors()); // Handle preflight requests
+
 const uri = process.env.MONGODB_ATLAS_URL;
 mongoose.connect(uri)
     .then(() => { 
