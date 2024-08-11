@@ -20,7 +20,7 @@ app.use(express.json());
 
 
 app.use(cors({
-  origin: 'https://student-management-vdb9.vercel.app', 
+  origin: ['https://student-management-vdb9.vercel.app', 'http://localhost:3000'], 
   methods: ['GET', 'POST', 'PUT', 'DELETE', 'OPTIONS'], 
   allowedHeaders: ['Content-Type', 'Authorization'],
   credentials: true,
