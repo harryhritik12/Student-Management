@@ -24,7 +24,7 @@ export const AllComplainComponent = () => {
     useEffect(() => {
         const fetchComplaints = async () => {
             try {
-                const response = await fetch(`${process.env.REACT_APP_BACKEND_URL}/staff/${userId}/eComplaint/all`, {
+                const response = await fetch(`https://student-management-server-jozx.onrender.com/staff/${userId}/eComplaint/all`, {
                     method: 'GET',
                     headers: {
                         Authorization: `Bearer ${token}`,

@@ -47,7 +47,7 @@ export function StaffSignup(props) {
       let staffID = data.get('staffID');
       let yearOfJoining = data.get('yearOfJoining');
 
-      await axios.post(`${process.env.REACT_APP_BACKEND_URL}/signup/staff`, { firstName, lastName, email, password, staffID, yearOfJoining })
+      await axios.post(`https://student-management-server-jozx.onrender.com/signup/staff`, { firstName, lastName, email, password, staffID, yearOfJoining })
         .then(result => {
           if (result.data.status === 500) alert(result.data.error);
           else if (result.data.status === 400 && result.data === "You have already Registered") {
@@ -64,7 +64,7 @@ export function StaffSignup(props) {
       // Extract OTP value from form data
       let otp = data.get('otp');
       // Call API to verify OTP
-      await axios.post(`${process.env.REACT_APP_BACKEND_URL}/signup/authenticate`, { otp })
+      await axios.post(`https://student-management-server-jozx.onrender.com/signup/authenticate`, { otp })
         .then(result => {
           console.log(result);
           // Handle success or failure based on the result

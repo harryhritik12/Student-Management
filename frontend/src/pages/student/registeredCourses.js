@@ -26,7 +26,7 @@ export const RegisteredCoursePage = () => {
   useEffect(() => {
     const fetchCourses = async () => {
       try {
-        const response = await axios.get(`${process.env.REACT_APP_BACKEND_URL}/student/${userId}/additionalCourse/registered`, {
+        const response = await axios.get(`https://student-management-server-jozx.onrender.com/student/${userId}/additionalCourse/registered`, {
           method: 'GET',
           headers: {
             Authorization: `Bearer ${token}`,
@@ -35,7 +35,7 @@ export const RegisteredCoursePage = () => {
         });
         const coursesData = await Promise.all(
           response.data.map(async course => {
-            const facultyProfile = await axios.get(`${process.env.REACT_APP_BACKEND_URL}/faculty/${course.facultyID}/profile`, {
+            const facultyProfile = await axios.get(`https://student-management-server-jozx.onrender.com/faculty/${course.facultyID}/profile`, {
               method: 'GET',
               headers: {
                 Authorization: `Bearer ${token}`,

@@ -37,7 +37,7 @@ export const CreateAnnouncement = () => {
 
       try {
         const response = await fetch(
-          `${process.env.REACT_APP_BACKEND_URL}/staff/${userId}/announcement/create`,
+          `https://student-management-server-jozx.onrender.com/staff/${userId}/announcement/create`,
           {
             method: "POST",
             headers: {

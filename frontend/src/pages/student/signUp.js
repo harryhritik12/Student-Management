@@ -48,7 +48,7 @@ export function StudentSignup(props) {
       let graduationYear = data.get('graduationYear');
       let program = data.get('program');
 
-      await axios.post(`${process.env.REACT_APP_BACKEND_URL}/signup/student`, { firstName, lastName, email, password, rollNumber, branch, batch, graduationYear, program })
+      await axios.post(`https://student-management-server-jozx.onrender.com/signup/student`, { firstName, lastName, email, password, rollNumber, branch, batch, graduationYear, program })
         .then(result => {
           if (result.data.status === 500) alert(result.data.error);
           else if (result.data.status === 400 && result.data === "You have already Registered") {
@@ -64,7 +64,7 @@ export function StudentSignup(props) {
     } else {
       let otp = data.get('otp');
       // Call API to verify OTP
-      await axios.post(`${process.env.REACT_APP_BACKEND_URL}/signup/authenticate`, { otp })
+      await axios.post(`https://student-management-server-jozx.onrender.com/signup/authenticate`, { otp })
         .then(result => {
           console.log(result);
           // Handle success or failure based on the result

@@ -48,7 +48,7 @@ export const AllCoursesPage = () => {
   useEffect(() => {
     const fetchCourses = async () => {
       try {
-        const response = await axios.get(`${process.env.REACT_APP_BACKEND_URL}/student/${userId}/additionalCourse/all`,
+        const response = await axios.get(`https://student-management-server-jozx.onrender.com/student/${userId}/additionalCourse/all`,
           {
             method: 'GET',
             headers: {
@@ -60,7 +60,7 @@ export const AllCoursesPage = () => {
         console.log(response);
         const coursesData = await Promise.all(
           response.data.map(async (course) => {
-            const facultyProfile = await axios.get(`${process.env.REACT_APP_BACKEND_URL}/faculty/${course.facultyID}/profile`, {
+            const facultyProfile = await axios.get(`https://student-management-server-jozx.onrender.com/faculty/${course.facultyID}/profile`, {
               method: 'GET',
               headers: {
                 Authorization: `Bearer ${token}`,

@@ -27,7 +27,7 @@ export const GetAllAnnouncements = () => {
     useEffect(() => {
         const fetchAnnouncement = async () => {
             try {
-                const response = await axios.get(`${process.env.REACT_APP_BACKEND_URL}/staff/${userId}/announcement/all`, {
+                const response = await axios.get(`https://student-management-server-jozx.onrender.com/staff/${userId}/announcement/all`, {
                     method: 'GET',
                     headers: {
                         Authorization: `Bearer ${token}`,

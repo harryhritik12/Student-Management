@@ -26,7 +26,7 @@ export const CoursePage = () => {
     useEffect(() => {
         const fetchCourse = async () => {
             try {
-                const response = await fetch(`${process.env.REACT_APP_BACKEND_URL}/student/${userId}/additionalCourse/${courseId}`, {
+                const response = await fetch(`https://student-management-server-jozx.onrender.com/student/${userId}/additionalCourse/${courseId}`, {
                     method: 'GET',
                     headers: {
                         Authorization: `Bearer ${token}`,
@@ -38,7 +38,7 @@ export const CoursePage = () => {
                 }
                 const courseData = await response.json();
                 setCourse(courseData);
-                const userData = await fetch(`${process.env.REACT_APP_BACKEND_URL}/student/${userId}/profile`,{
+                const userData = await fetch(`https://student-management-server-jozx.onrender.com/student/${userId}/profile`,{
                     method: 'GET',
                     headers: {
                         Authorization: `Bearer ${token}`,
@@ -61,7 +61,7 @@ export const CoursePage = () => {
 
     const handleOnClickRegister = async () => {
         try {
-            const response = await fetch(`${process.env.REACT_APP_BACKEND_URL}/student/${userId}/additionalCourse/register/${course.courseID}`, {
+            const response = await fetch(`https://student-management-server-jozx.onrender.com/student/${userId}/additionalCourse/register/${course.courseID}`, {
                 method: 'PATCH',
                 headers: {
                     Authorization: `Bearer ${token}`,
@@ -86,7 +86,7 @@ export const CoursePage = () => {
     }
     const handleOnClickUnregister = async () => {
         try {
-            const response = await fetch(`${process.env.REACT_APP_BACKEND_URL}/student/${userId}/additionalCourse/unregister/${course.courseID}`, {
+            const response = await fetch(`https://student-management-server-jozx.onrender.com/student/${userId}/additionalCourse/unregister/${course.courseID}`, {
                 method: 'PATCH',
                 headers: {
                     Authorization: `Bearer ${token}`,

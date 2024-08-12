@@ -19,7 +19,7 @@ export const AnnouncementByIdStaff = () => {
     useEffect(() => {
         const fetchAnnouncement = async () => {
             try {
-                const response = await axios.get(`${process.env.REACT_APP_BACKEND_URL}/staff/${userId}/announcement/${announcementId}`, {
+                const response = await axios.get(`https://student-management-server-jozx.onrender.com/staff/${userId}/announcement/${announcementId}`, {
                     headers: {
                         Authorization: `Bearer ${token}`,
                         'Content-Type': 'application/json',
@@ -37,7 +37,7 @@ export const AnnouncementByIdStaff = () => {
 
     const handleDelete = async () => {
         try {
-            const response = await fetch(`${process.env.REACT_APP_BACKEND_URL}/staff/${userId}/announcement/delete/${announcementId}`, {
+            const response = await fetch(`https://student-management-server-jozx.onrender.com/staff/${userId}/announcement/delete/${announcementId}`, {
                 method: 'PATCH',
                 headers: {
                     'Authorization': `Bearer ${token}`,
