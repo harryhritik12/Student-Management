@@ -1,8 +1,8 @@
 
-## 🎓 Student Management System
+# 🎓 Student Management System
 Welcome to the Student Management System, a cutting-edge solution designed to streamline academic processes and enhance the overall experience for students, faculty, and staff. Built with the powerful MERN stack (MongoDB, Express, React, Node.js) and styled with the elegant Material-UI, our system ensures a seamless, secure, and visually appealing user experience.
 
-## ✨ Key Features
+# ✨ Key Features
 
 # 🌐 Student Portal
 Convenience & Accessibility: Access essential academic resources anytime, anywhere.
