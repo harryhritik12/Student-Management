@@ -2,9 +2,9 @@
 # 🎓 Student Management System
 Welcome to the Student Management System, a cutting-edge solution designed to streamline academic processes and enhance the overall experience for students, faculty, and staff. Built with the powerful MERN stack (MongoDB, Express, React, Node.js) and styled with the elegant Material-UI, our system ensures a seamless, secure, and visually appealing user experience.
 
-# ✨ Key Features
+## ✨ Key Features
 
-# 🌐 Student Portal
+## 🌐 Student Portal
 Convenience & Accessibility: Access essential academic resources anytime, anywhere.
 Centralized Information: All your academic data, beautifully organized in one place.
 E-Complaint Lodging: Easily lodge and track complaints with just a few clicks.
@@ -22,7 +22,7 @@ Student, Faculty, & Staff Models: Secure and organized data structures tailored 
 E-Complaint, Timetable, & Announcement Models: Specialized models to meet specific needs and ensure smooth operation.
 
 ## 🚀 Functionalities
-# 🎓 For Students
+## 🎓 For Students
 Access Announcements
 Manage Complaints
 View Timetables
