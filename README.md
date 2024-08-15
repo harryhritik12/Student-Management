@@ -22,14 +22,16 @@ Student, Faculty, & Staff Models: Secure and organized data structures tailored 
 E-Complaint, Timetable, & Announcement Models: Specialized models to meet specific needs and ensure smooth operation.
 
 ## 🚀 Functionalities
+
 ## 🎓 For Students
 Access Announcements
 Manage Complaints
 View Timetables
 Enroll in Additional Courses
-# 👨‍🏫 For Faculty
+## 👨‍🏫 For Faculty
 Create Additional Courses
-# 🏢 For Staff
+##  🏢 For Staff
+
 Handle Complaints
 Create Announcements
 Develop and Manage Timetables
@@ -49,5 +51,7 @@ Custom homepages designed to cater to the specific needs of Students, Faculty, a
 
 ## 👥 Contributors
 Gaurav Kumar Chaurasiyan
+
 Minshu Shaw
+
 Hritik Pankaj
