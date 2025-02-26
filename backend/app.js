@@ -21,7 +21,7 @@ app.use(express.json());
 
 
 app.use(cors({
-  origin: ['https://campussync.netlify.app', 'http://localhost:3000'],
+  origin: ['https://campussync.netlify.app', 'http://localhost:3000,https://student-management-2fbi.vercel.app/','https://student-management-2fbi.vercel.app/'],
   methods: ['GET', 'POST', 'PUT', 'DELETE', 'OPTIONS'],
   allowedHeaders: ['Content-Type', 'Authorization'],
   credentials: true,
