@@ -37,7 +37,7 @@ export const CreateAnnouncement = () => {
 
       try {
         const response = await fetch(
-          `https://student-management-server-jozx.onrender.com/staff/${userId}/announcement/create`,
+          `https://student-management-ssll.onrender.com/staff/${userId}/announcement/create`,
           {
             method: "POST",
             headers: {

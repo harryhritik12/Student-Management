@@ -18,7 +18,7 @@ export const GetTimetableById = () => {
     useEffect(() => {
         const fetchTimetableData = async () => {
             try {
-                const response = await fetch(`https://student-management-server-jozx.onrender.com/staff/${userId}/timetable/${timetableID}`, {
+                const response = await fetch(`https://student-management-ssll.onrender.com/staff/${userId}/timetable/${timetableID}`, {
                     method: 'GET',
                     headers: {
                         Authorization: `Bearer ${token}`,

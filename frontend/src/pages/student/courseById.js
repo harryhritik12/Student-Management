@@ -26,7 +26,7 @@ export const CoursePage = () => {
     useEffect(() => {
         const fetchCourse = async () => {
             try {
-                const response = await fetch(`https://student-management-server-jozx.onrender.com/student/${userId}/additionalCourse/${courseId}`, {
+                const response = await fetch(`https://student-management-ssll.onrender.com/student/${userId}/additionalCourse/${courseId}`, {
                     method: 'GET',
                     headers: {
                         Authorization: `Bearer ${token}`,

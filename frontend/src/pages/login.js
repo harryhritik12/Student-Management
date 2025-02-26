@@ -43,7 +43,7 @@ export function Login(props) {
 
 
     try {
-      const response = await fetch(`https://student-management-server-jozx.onrender.com/auth/login`, {
+      const response = await fetch(`https://student-management-ssll.onrender.com/auth/login`, {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',

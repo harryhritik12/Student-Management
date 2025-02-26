@@ -35,7 +35,7 @@ export const ComplaintByIdStaff = () => {
 
   const handleUpdate = async () => {
     try {
-      const response = await fetch(`https://student-management-server-jozx.onrender.com/staff/${id}/eComplaint/${complaintID}/update`, {
+      const response = await fetch(`https://student-management-ssll.onrender.com/staff/${id}/eComplaint/${complaintID}/update`, {
         method: 'PATCH',
         headers: {
           Authorization: `Bearer ${token}`,

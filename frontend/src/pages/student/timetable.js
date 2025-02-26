@@ -24,7 +24,7 @@ export const Timetable = () => {
         let semester = data.get('semester');
 
         try {
-            const response = await fetch(`https://student-management-server-jozx.onrender.com/student/${userId}/timetable`, {
+            const response = await fetch(`https://student-management-ssll.onrender.com/student/${userId}/timetable`, {
                 method: 'POST',
                 headers: {
                     Authorization: `Bearer ${token}`,

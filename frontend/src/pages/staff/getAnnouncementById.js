@@ -19,7 +19,7 @@ export const AnnouncementByIdStaff = () => {
     useEffect(() => {
         const fetchAnnouncement = async () => {
             try {
-                const response = await axios.get(`https://student-management-server-jozx.onrender.com/staff/${userId}/announcement/${announcementId}`, {
+                const response = await axios.get(`https://student-management-ssll.onrender.com/staff/${userId}/announcement/${announcementId}`, {
                     headers: {
                         Authorization: `Bearer ${token}`,
                         'Content-Type': 'application/json',

@@ -47,7 +47,7 @@ export const AllRegisteredCourse = () => {
   useEffect(() => {
     const fetchCourses = async () => {
       try {
-        const response = await axios.get(`https://student-management-server-jozx.onrender.com/faculty/${userId}/additionalCourse/all`, {
+        const response = await axios.get(`https://student-management-ssll.onrender.com/faculty/${userId}/additionalCourse/all`, {
           method: 'GET',
           headers: {
             Authorization: `Bearer ${token}`,

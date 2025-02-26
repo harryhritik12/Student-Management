@@ -50,7 +50,7 @@ export const NewComplainPage = () => {
             formData.append("picturePath", values.picturePath);
 
     
-            const response = await fetch(`https://student-management-server-jozx.onrender.com/student/${userId}/eComplaint/submit`, {
+            const response = await fetch(`https://student-management-ssll.onrender.com/student/${userId}/eComplaint/submit`, {
                 method: 'POST',
                 headers: {
                     Authorization: `Bearer ${token}`,

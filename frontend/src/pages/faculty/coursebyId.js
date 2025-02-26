@@ -25,7 +25,7 @@ export const CourseById = () => {
     const handleOnClickDelete = async (courseId) => {
 
         try {
-            const response = await fetch(`https://student-management-server-jozx.onrender.com/faculty/${userId}/additionalCourse/delete/${courseId}`, {
+            const response = await fetch(`https://student-management-ssll.onrender.com/faculty/${userId}/additionalCourse/delete/${courseId}`, {
                 method: 'PATCH',
                 headers: {
                     Authorization: `Bearer ${token}`,
